@@ -1,3 +1,4 @@
+import 'package:e_comerce/app/products/resources/products_texts.dart';
 import 'package:e_comerce/resources/enums/images_path.dart';
 import 'package:flutter/material.dart';
 
@@ -27,7 +28,10 @@ class _ProductCardState extends State<ProductCard> {
               ElevatedButton(
                 onPressed: () {},
                 style: theme.elevatedButtonTheme.style,
-                child: const Icon(Icons.add_shopping_cart),
+                child: const Icon(
+                  Icons.add_shopping_cart,
+                  semanticLabel: addCart,
+                ),
               ),
             ],
           ),
