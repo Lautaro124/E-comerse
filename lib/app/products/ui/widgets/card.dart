@@ -15,37 +15,42 @@ class _ProductCardState extends State<ProductCard> {
     final ThemeData theme = Theme.of(context);
     return Card(
       color: theme.cardColor,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Stack(
-            alignment: const Alignment(0.9, -0.95),
-            children: [
-              AspectRatio(
-                aspectRatio: 1.5,
-                child: Image.asset(ImagesPath.airphone.path),
-              ),
-              ElevatedButton(
-                onPressed: () {},
-                style: theme.elevatedButtonTheme.style,
-                child: const Icon(
-                  Icons.add_shopping_cart,
-                  semanticLabel: addCart,
+      child: Container(
+        padding: const EdgeInsets.only(top: 20),
+        width: double.infinity,
+        height: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Stack(
+              alignment: const Alignment(0.9, -0.95),
+              children: [
+                AspectRatio(
+                  aspectRatio: 1.5,
+                  child: Image.asset(ImagesPath.airphone.path),
                 ),
-              ),
-            ],
-          ),
-          Text(
-            'Samsung burds 2',
-            maxLines: 2,
-            textAlign: TextAlign.center,
-            style: theme.textTheme.titleMedium,
-          ),
-          Text(
-            '200\$',
-            style: theme.textTheme.bodyMedium,
-          )
-        ],
+                ElevatedButton(
+                  onPressed: () {},
+                  style: theme.elevatedButtonTheme.style,
+                  child: const Icon(
+                    Icons.add_shopping_cart,
+                    semanticLabel: addCart,
+                  ),
+                ),
+              ],
+            ),
+            Text(
+              'Samsung burds 2',
+              maxLines: 2,
+              textAlign: TextAlign.center,
+              style: theme.textTheme.titleMedium,
+            ),
+            Text(
+              '200\$',
+              style: theme.textTheme.bodyMedium,
+            ),
+          ],
+        ),
       ),
     );
   }
