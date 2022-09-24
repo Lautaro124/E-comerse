@@ -11,16 +11,38 @@ class ProductCard extends StatefulWidget {
 class _ProductCardState extends State<ProductCard> {
   @override
   Widget build(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
     return Card(
-        child: Column(
-      children: [
-        AspectRatio(
-          aspectRatio: 1.3,
-          child: Image.asset(ImagesPath.airphone.path),
-        ),
-        const Text('Burds'),
-        const Text('200\$')
-      ],
-    ));
+      color: theme.cardColor,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Stack(
+            alignment: const Alignment(0.9, -0.95),
+            children: [
+              AspectRatio(
+                aspectRatio: 1.5,
+                child: Image.asset(ImagesPath.airphone.path),
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                style: theme.elevatedButtonTheme.style,
+                child: const Icon(Icons.add_shopping_cart),
+              ),
+            ],
+          ),
+          Text(
+            'Samsung burds 2',
+            maxLines: 2,
+            textAlign: TextAlign.center,
+            style: theme.textTheme.titleMedium,
+          ),
+          Text(
+            '200\$',
+            style: theme.textTheme.bodyMedium,
+          )
+        ],
+      ),
+    );
   }
 }
