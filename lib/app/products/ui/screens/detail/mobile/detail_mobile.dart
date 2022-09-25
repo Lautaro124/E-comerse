@@ -1,5 +1,5 @@
 import 'package:e_comerce/app/products/ui/widgets/description_product.dart';
-import 'package:e_comerce/app/products/ui/widgets/show_products.dart';
+import 'package:e_comerce/app/products/ui/widgets/more_products.dart';
 import 'package:e_comerce/app/products/ui/widgets/title_detail_product.dart';
 import 'package:e_comerce/resources/enums/images_path.dart';
 import 'package:e_comerce/widgets/layout_generator.dart';
@@ -24,7 +24,7 @@ class _DetailMobileState extends State<DetailMobile> {
           ),
           const TitleDetailProduct(),
           const DescriptionProduct(),
-          const ShowPorducts()
+          const MoreProducts()
         ],
       ),
     );

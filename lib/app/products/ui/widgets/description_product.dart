@@ -1,3 +1,5 @@
+import 'package:e_comerce/app/products/resources/constants/detail_utils.dart';
+import 'package:e_comerce/app/products/resources/products_texts.dart';
 import 'package:flutter/material.dart';
 
 class DescriptionProduct extends StatelessWidget {
@@ -8,18 +10,23 @@ class DescriptionProduct extends StatelessWidget {
     final ThemeData theme = Theme.of(context);
 
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      margin: detailMarginWidgets,
+      padding: detailPadding,
+      width: double.infinity,
+      height: MediaQuery.of(context).size.height * 0.3,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Description',
+            description,
             style: theme.textTheme.titleLarge,
           ),
           Text(
-            'Lorem ipsum dolo inmenso' * 29,
+            'Lorem Ipsum is simply dummy text of the printing and typesetting industry' *
+                10,
             style: theme.textTheme.bodyMedium,
+            textAlign: TextAlign.justify,
           ),
         ],
       ),

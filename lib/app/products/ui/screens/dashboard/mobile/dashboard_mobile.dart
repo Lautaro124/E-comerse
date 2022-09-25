@@ -1,4 +1,4 @@
-import 'package:e_comerce/app/products/ui/widgets/card.dart';
+import 'package:e_comerce/app/products/ui/widgets/show_products.dart';
 import 'package:e_comerce/widgets/layout_generator.dart';
 import 'package:flutter/material.dart';
 
@@ -14,20 +14,10 @@ class _DashboardMobileState extends State<DashboardMobile> {
   Widget build(BuildContext context) {
     return LayoutGenerator(
       body: Container(
-        padding: const EdgeInsets.only(top: 20, bottom: 20),
-        width: double.infinity,
-        height: double.infinity,
-        child: GridView.count(
-          crossAxisCount: 2,
-          children: const [
-            ProductCard(),
-            ProductCard(),
-            ProductCard(),
-            ProductCard(),
-            ProductCard(),
-          ],
-        ),
-      ),
+          padding: const EdgeInsets.only(top: 20, bottom: 20),
+          width: double.infinity,
+          height: double.infinity,
+          child: const ShowPorducts()),
     );
   }
 }

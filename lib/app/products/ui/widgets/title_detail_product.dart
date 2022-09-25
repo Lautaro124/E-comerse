@@ -1,3 +1,4 @@
+import 'package:e_comerce/app/products/resources/constants/detail_utils.dart';
 import 'package:flutter/material.dart';
 
 class TitleDetailProduct extends StatefulWidget {
@@ -13,9 +14,11 @@ class _TitleDetailProductState extends State<TitleDetailProduct> {
     final ThemeData theme = Theme.of(context);
 
     return Container(
-      margin: const EdgeInsets.only(top: 15, bottom: 30),
+      margin: const EdgeInsets.only(top: 20),
+      padding: detailPadding,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
