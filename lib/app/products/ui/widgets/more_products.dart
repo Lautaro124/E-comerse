@@ -21,10 +21,9 @@ class MoreProducts extends StatelessWidget {
             morePorducts,
             style: Theme.of(context).textTheme.titleLarge,
           ),
-          SizedBox(
-            width: double.infinity,
+          ShowPorducts(
             height: MediaQuery.of(context).size.height * 0.45,
-            child: const ShowPorducts(),
+            listProductHeigth: MediaQuery.of(context).size.height * 0.39,
           ),
         ],
       ),
