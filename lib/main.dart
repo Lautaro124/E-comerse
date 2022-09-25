@@ -1,4 +1,4 @@
-import 'package:e_comerce/app/products/ui/screens/dashboard/dashboard.dart';
+import 'package:e_comerce/resources/utils/routes.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +15,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Dashboard(),
+      initialRoute: routes.keys.first,
+      routes: routes,
     );
   }
 }

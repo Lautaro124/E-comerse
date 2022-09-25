@@ -1,6 +1,6 @@
 import 'package:e_comerce/app/products/resources/constants/detail_utils.dart';
-import 'package:e_comerce/app/products/ui/widgets/card.dart';
-import 'package:e_comerce/app/products/ui/widgets/line_card.dart';
+import 'package:e_comerce/app/products/resources/utils/provisory_info.dart';
+import 'package:e_comerce/resources/enums/navigation.dart';
 import 'package:flutter/material.dart';
 
 class ShowPorducts extends StatefulWidget {
@@ -89,16 +89,14 @@ class _ShowPorductsState extends State<ShowPorducts> {
         height: widget.listProductHeigth ?? double.infinity,
         child: GridView.count(
           crossAxisCount: 2,
-          children: const [
-            ProductCard(),
-            ProductCard(),
-            ProductCard(),
-            ProductCard(),
-            ProductCard(),
-            ProductCard(),
-            ProductCard(),
-            ProductCard(),
-          ],
+          children: cards
+              .map(
+                (Widget card) => InkWell(
+                  onTap: goDetails,
+                  child: card,
+                ),
+              )
+              .toList(),
         ),
       );
 
@@ -107,16 +105,14 @@ class _ShowPorductsState extends State<ShowPorducts> {
         width: double.infinity,
         height: widget.listProductHeigth ?? double.infinity,
         child: ListView(
-          children: const [
-            LineCard(),
-            LineCard(),
-            LineCard(),
-            LineCard(),
-            LineCard(),
-            LineCard(),
-            LineCard(),
-            LineCard(),
-          ],
+          children: lines
+              .map(
+                (Widget card) => InkWell(
+                  onTap: goDetails,
+                  child: card,
+                ),
+              )
+              .toList(),
         ),
       );
 
@@ -131,4 +127,7 @@ class _ShowPorductsState extends State<ShowPorducts> {
       isLineCard = true;
     });
   }
+
+  void goDetails() =>
+      Navigator.pushNamed(context, NavigationScreens.detail.name);
 }
