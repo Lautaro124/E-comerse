@@ -13,19 +13,10 @@ class MoreProducts extends StatelessWidget {
       padding: detailPadding,
       width: double.infinity,
       height: MediaQuery.of(context).size.height * 0.5,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            morePorducts,
-            style: Theme.of(context).textTheme.titleLarge,
-          ),
-          ShowPorducts(
-            height: MediaQuery.of(context).size.height * 0.45,
-            listProductHeigth: MediaQuery.of(context).size.height * 0.39,
-          ),
-        ],
+      child: ShowPorducts(
+        title: morePorducts,
+        height: MediaQuery.of(context).size.height * 0.45,
+        listProductHeigth: MediaQuery.of(context).size.height * 0.39,
       ),
     );
   }

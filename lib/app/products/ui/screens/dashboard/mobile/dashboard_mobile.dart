@@ -14,10 +14,14 @@ class _DashboardMobileState extends State<DashboardMobile> {
   Widget build(BuildContext context) {
     return LayoutGenerator(
       body: Container(
-          padding: const EdgeInsets.only(top: 20, bottom: 20),
-          width: double.infinity,
-          height: double.infinity,
-          child: const ShowPorducts()),
+        padding: const EdgeInsets.only(top: 20, bottom: 20),
+        width: double.infinity,
+        height: double.infinity,
+        child: ShowPorducts(
+          title: 'Products',
+          listProductHeigth: MediaQuery.of(context).size.height * 0.73,
+        ),
+      ),
     );
   }
 }

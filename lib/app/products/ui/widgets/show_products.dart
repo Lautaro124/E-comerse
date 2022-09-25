@@ -5,7 +5,9 @@ import 'package:flutter/material.dart';
 
 class ShowPorducts extends StatefulWidget {
   final double? height, listProductHeigth;
-  const ShowPorducts({Key? key, this.height, this.listProductHeigth})
+  final String title;
+  const ShowPorducts(
+      {Key? key, this.height, this.listProductHeigth, required this.title})
       : super(key: key);
 
   @override
@@ -24,38 +26,48 @@ class _ShowPorductsState extends State<ShowPorducts> {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          Container(
-            width: 130,
-            height: 50,
-            decoration: BoxDecoration(
-              borderRadius: const BorderRadius.all(Radius.circular(5)),
-              border: Border.all(
-                color: Colors.black26,
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                widget.title,
+                style: Theme.of(context).textTheme.titleLarge,
               ),
-            ),
-            margin: const EdgeInsets.only(right: 15),
-            child: ListView.separated(
-              scrollDirection: Axis.horizontal,
-              itemCount: 2,
-              separatorBuilder: (context, index) => Container(
+              Container(
+                width: 130,
                 height: 50,
-                width: 1,
-                decoration: const BoxDecoration(color: Colors.black26),
-              ),
-              itemBuilder: (context, index) => ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.transparent,
-                  shadowColor: Colors.transparent,
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.all(Radius.circular(5)),
+                  border: Border.all(
+                    color: Colors.black26,
+                  ),
                 ),
-                onPressed: () => changeListProducts(index),
-                child: Icon(
-                  index == 0
-                      ? Icons.dashboard_rounded
-                      : Icons.calendar_view_day_rounded,
-                  color: Colors.black12,
+                margin: const EdgeInsets.only(right: 15),
+                child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 2,
+                  separatorBuilder: (context, index) => Container(
+                    height: 50,
+                    width: 1,
+                    decoration: const BoxDecoration(color: Colors.black26),
+                  ),
+                  itemBuilder: (context, index) => ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.transparent,
+                      shadowColor: Colors.transparent,
+                    ),
+                    onPressed: () => changeListProducts(index),
+                    child: Icon(
+                      index == 0
+                          ? Icons.dashboard_rounded
+                          : Icons.calendar_view_day_rounded,
+                      color: Colors.black12,
+                    ),
+                  ),
                 ),
               ),
-            ),
+            ],
           ),
           AnimatedSwitcher(
             transitionBuilder: (Widget child, Animation<double> animation) =>
@@ -82,6 +94,10 @@ class _ShowPorductsState extends State<ShowPorducts> {
             ProductCard(),
             ProductCard(),
             ProductCard(),
+            ProductCard(),
+            ProductCard(),
+            ProductCard(),
+            ProductCard(),
           ],
         ),
       );
@@ -92,6 +108,10 @@ class _ShowPorductsState extends State<ShowPorducts> {
         height: widget.listProductHeigth ?? double.infinity,
         child: ListView(
           children: const [
+            LineCard(),
+            LineCard(),
+            LineCard(),
+            LineCard(),
             LineCard(),
             LineCard(),
             LineCard(),
